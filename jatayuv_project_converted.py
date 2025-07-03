@@ -223,6 +223,7 @@ print(df['bert_sentiment'].value_counts())
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+import streamlit as st 
 
 plt.figure(figsize=(8, 5))
 sns.countplot(x='bert_sentiment', data=df, hue='bert_sentiment', palette='magma', legend=False)
