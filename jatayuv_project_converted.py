@@ -225,7 +225,8 @@ import seaborn as sns
 
 # Visualize the distribution of BERT sentiment
 plt.figure(figsize=(8, 6))
-sns.countplot(x='bert_sentiment', data=df, palette='magma')# defining color to bar chart
+#sns.countplot(x='bert_sentiment', data=df, palette='magma')# defining color to bar chart
+sns.countplot(x='bert_sentiment', data=df, hue='bert_sentiment', palette='magma', legend=False)
 plt.title('Distribution of Sentiment in Traveler Reviews (BERT)')
 plt.xlabel('Sentiment')
 plt.ylabel('Number of Reviews')
