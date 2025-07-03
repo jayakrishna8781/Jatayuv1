@@ -220,17 +220,28 @@ print(df['bert_sentiment'].value_counts())
 # In[46]:
 
 
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+
+# # Visualize the distribution of BERT sentiment
+# plt.figure(figsize=(8, 6))
+# #sns.countplot(x='bert_sentiment', data=df, palette='magma')# defining color to bar chart
+# sns.countplot(x='bert_sentiment', data=df, hue='bert_sentiment', palette='magma', legend=False)
+# plt.title('Distribution of Sentiment in Traveler Reviews (BERT)')
+# plt.xlabel('Sentiment')
+# plt.ylabel('Number of Reviews')
+# plt.show()
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Visualize the distribution of BERT sentiment
-plt.figure(figsize=(8, 6))
-#sns.countplot(x='bert_sentiment', data=df, palette='magma')# defining color to bar chart
+plt.figure(figsize=(8, 5))
 sns.countplot(x='bert_sentiment', data=df, hue='bert_sentiment', palette='magma', legend=False)
-plt.title('Distribution of Sentiment in Traveler Reviews (BERT)')
-plt.xlabel('Sentiment')
-plt.ylabel('Number of Reviews')
-plt.show()
+plt.title("Distribution of Sentiment in Traveler Reviews")
+plt.xlabel("Sentiment")
+plt.ylabel("Count")
+plt.tight_layout()
+
+st.pyplot(plt)
 
 
 # Now, let's implement a simple alert system. If more than 30% of the reviews are negative, we'll trigger a simulated alert.
