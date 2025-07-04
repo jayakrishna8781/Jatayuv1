@@ -233,6 +233,7 @@ plt.ylabel("Count")
 plt.tight_layout()
 
 st.pyplot(plt)
+plt.show()
 
 
 # Now, let's implement a simple alert system. If more than 30% of the reviews are negative, we'll trigger a simulated alert.
